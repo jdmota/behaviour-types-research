@@ -1,0 +1,47 @@
+// C - o client
+// A - a agencia
+// B - o banco
+
+global protocol BuyTicket(role C, role A, role B) {
+  request(Travel) from C to A;
+  data(Data) from A to C;
+  payment(Data) from C to B;
+  choice at B {
+    approval(true) from B to C,A;
+    invoice(Invoice) from A to C;
+  } or {
+    approval(false) from B to C;
+  }
+}
+
+local protocol BuyTicket_C(self C, role A, role B) {
+  request(Travel) to A;
+  data(Data) from A;
+  payment(Data) to B;
+  choice at B {
+    approval(true) from B;
+    invoice(Invoice) from A;
+  } or {
+    approval(false) from B;
+  }
+}
+
+local protocol BuyTicket_A(role C, self A, role B) {
+  request(Travel) from C;
+  data(Data) to C;
+  choice at B {
+    approval(true) from B;
+    invoice(Invoice) to C;
+  }
+}
+
+local protocol BuyTicket_B(role C, role A, self B) {
+  payment(Data) from C;
+  choice at B {
+    approval(true) to C,A;
+  } or {
+    approval(false) to C;
+  }
+}
+
+// FIXME is "approval(true)" correct?
