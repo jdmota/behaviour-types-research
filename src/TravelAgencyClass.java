@@ -16,6 +16,7 @@ public class TravelAgencyClass {
 	}
 
 	public PaymentStatus tryPayment(String data) {
+		System.out.println("Trying payment for travel: " + travel);
 		return bank.receivePayment(data);
 	}
 
