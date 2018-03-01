@@ -1,7 +1,7 @@
 typestate TravelAgencyProtocol {
 
 	State0 = {
-		String getInfo(): State0
+		String getInfo(): State0,
 		void receiveRequest(String): State1
 	}
 	

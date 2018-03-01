@@ -1,7 +1,7 @@
 typestate ClientProtocol {
 
 	State0 = {
-		String receiveInfo(): State0
+		String receiveInfo(): State0,
 		void sendRequest(String): State1
 	}
 	
