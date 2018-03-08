@@ -19,7 +19,7 @@ public class Main {
 				client.exit(OurBool.TRUE);
 				return;
 			case KO:
-				client.exit(OurBool.FALSE);
+				client.exit(OurBool.TRUE);
 				return;
 			case TA:
 				tries++;

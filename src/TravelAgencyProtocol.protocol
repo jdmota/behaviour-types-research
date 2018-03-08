@@ -6,7 +6,7 @@ typestate TravelAgencyProtocol {
 	}
 	
 	State1 = {
-		PaymentStatus tryPayment(String): <OK: State2, KO: State0, TA: State1>
+		PaymentStatus tryPayment(String): <OK: State2, KO: State3, TA: State1>
 	}
 	
 	State2 = {
@@ -14,7 +14,7 @@ typestate TravelAgencyProtocol {
 	}
 	
 	State3 = {
-		OurBool exit(OurBool): <TRUE: {}, FALSE: State0>
+		OurBool exit(OurBool): <TRUE: end, FALSE: State0>
 	}
 
 }
