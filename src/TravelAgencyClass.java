@@ -26,6 +26,8 @@ public class TravelAgencyClass {
 	}
 
 	public OurBool exit(OurBool b) {
+		if (b.equals(OurBool.TRUE)) {
+		}
 		return bank.exit(b);
 	}
 
