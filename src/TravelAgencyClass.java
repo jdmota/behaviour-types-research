@@ -3,25 +3,30 @@ import mungo.lib.Typestate;
 @Typestate("TravelAgencyProtocol")
 public class TravelAgencyClass {
 
-	private BankClass bank = new BankClass();
-	private String travel = null;
+	private BankClass bank = null;
+
+	public TravelAgencyClass(BankClass bank) {
+		this.bank = bank;
+	}
 
 	public String getInfo() {
 		return "Travel Agency Info";
 	}
 
 	public void receiveRequest(String travel) {
-		this.travel = travel;
-		System.out.println("Travel Agency received request: " + travel);
+
 	}
 
 	public PaymentStatus tryPayment(String data) {
-		System.out.println("Trying payment for travel: " + travel);
 		return bank.receivePayment(data);
 	}
 
 	public String getInvoice() {
-		return "Invoice for travel: " + travel;
+		return "Invoice for travel";
+	}
+
+	public OurBool exit(OurBool b) {
+		return bank.exit(b);
 	}
 
 }

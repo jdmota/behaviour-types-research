@@ -13,4 +13,8 @@ public class BankClass {
 		return PaymentStatus.KO;
 	}
 
+	public OurBool exit(OurBool b) {
+		return b;
+	}
+
 }

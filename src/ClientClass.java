@@ -3,7 +3,11 @@ import mungo.lib.Typestate;
 @Typestate("ClientProtocol")
 public class ClientClass {
 
-	private TravelAgencyClass travelAgency = new TravelAgencyClass();
+	private TravelAgencyClass travelAgency;
+
+	public ClientClass(TravelAgencyClass t) {
+		travelAgency = t;
+	}
 
 	public String receiveInfo() {
 		return this.travelAgency.getInfo();
@@ -19,6 +23,10 @@ public class ClientClass {
 
 	public String receiveInvoice() {
 		return this.travelAgency.getInvoice();
+	}
+
+	public OurBool exit(OurBool b) {
+		return travelAgency.exit(b);
 	}
 
 }

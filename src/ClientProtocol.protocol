@@ -10,7 +10,11 @@ typestate ClientProtocol {
 	}
 	
 	State2 = {
-		String receiveInvoice(): State0
+		String receiveInvoice(): State3
+	}
+	
+	State3 = {
+		OurBool exit(OurBool): <TRUE: {}, FALSE: State0>
 	}
 
 }
