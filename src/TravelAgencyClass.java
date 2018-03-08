@@ -3,11 +3,7 @@ import mungo.lib.Typestate;
 @Typestate("TravelAgencyProtocol")
 public class TravelAgencyClass {
 
-	private BankClass bank = null;
-
-	public TravelAgencyClass(BankClass bank) {
-		this.bank = bank;
-	}
+	private BankClass bank = new BankClass();
 
 	public String getInfo() {
 		return "Travel Agency Info";

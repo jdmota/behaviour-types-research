@@ -2,8 +2,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		BankClass bank = new BankClass();
-		TravelAgencyClass t = new TravelAgencyClass(bank);
+		TravelAgencyClass t = new TravelAgencyClass();
 		ClientClass client = new ClientClass(t);
 
 		client.receiveInfo();
