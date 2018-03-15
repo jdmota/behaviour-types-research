@@ -1,0 +1,7 @@
+typestate TravelAgencyProtocol {
+	
+	State0 = {
+		PaymentStatus tryPayment(BankClass, String): end
+	}
+
+}
