@@ -3,30 +3,16 @@ public class Main {
 	public static void main(String[] args) {
 
 		BankClass bank = new BankClass();
-		TravelAgencyClass t = new TravelAgencyClass(bank);
-		ClientClass client = new ClientClass(t);
 
-		client.receiveInfo();
-
-		client.sendRequest("my travel");
-
-		int tries = 0;
-
-		while (tries < 2) {
-			switch (client.tryPayment("some data for payment: OK")) {
-			case OK:
-				client.receiveInvoice();
-				client.exit(OurBool.TRUE);
-				return;
-			case KO:
-				client.exit(OurBool.TRUE);
-				return;
-			case TA:
-				tries++;
-			}
+		switch (bank.receivePayment("OK")) {
+		case OK:
+			break;
+		case KO:
+			break;
+		case TA:
+			break;
+		default: // It seems that Mungo doesn't detect that this will never run
 		}
-
-		client.exit(OurBool.TRUE);
 
 	}
 
