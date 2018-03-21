@@ -1,6 +1,3 @@
 ## behaviour-types-research
 
-Branches:
-
-- distributed
-- local
+File example
