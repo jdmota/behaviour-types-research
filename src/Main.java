@@ -4,6 +4,8 @@ public class Main {
 
 		BankClass bank = new BankClass();
 
+		// Can't I use the returned value even if Bank reached the "end"?
+
 		switch (bank.receivePayment("OK")) {
 		case OK:
 			break;
@@ -11,7 +13,6 @@ public class Main {
 			break;
 		case TA:
 			break;
-		default: // It seems that Mungo doesn't detect that this will never run
 		}
 
 	}
