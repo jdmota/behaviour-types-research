@@ -1,4 +1,3 @@
-
 public enum OurBool {
-TRUE, FALSE
+	TRUE, FALSE
 }

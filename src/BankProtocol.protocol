@@ -1,11 +1,7 @@
 typestate BankProtocol {
-
-	State0 = {
-		PaymentStatus receivePayment(String): <OK: State1, KO: end, TA: State0>
-	}
 	
-	State1 = {
-		OurBool exit(OurBool): <TRUE: end, FALSE: State0>
+	State0 = {
+		void exit(OurBool): end
 	}
 
 }
