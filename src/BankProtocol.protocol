@@ -1,7 +1,7 @@
 typestate BankProtocol {
 
 	State0 = {
-		PaymentStatus receivePayment(String): end
+		void receivePayment(): State0
 	}
 
 }
