@@ -1,7 +1,8 @@
 typestate BankProtocol {
 
 	State0 = {
-		void receivePayment(): State0
+		void receivePayment(): State0,
+		void exit(): end
 	}
 
 }

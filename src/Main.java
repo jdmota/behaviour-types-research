@@ -4,9 +4,13 @@ public class Main {
 
 		BankClass bank = new BankClass();
 
-		while (true) {
+		boolean b = true;
+
+		while (b) {
 			bank.receivePayment();
 		}
+
+		bank.exit();
 
 	}
 
