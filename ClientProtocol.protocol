@@ -1,0 +1,14 @@
+typestate ClientProtocol {
+  NoBid = {
+    void bid(double): WithBid,
+    void lose(): end
+  }
+  WithBid = {
+    void withdraw(): NoBid,
+    void win(): end,
+    void lose(): WithBidLost
+  }
+  WithBidLost = {
+    void withdraw(): end
+  }
+}
