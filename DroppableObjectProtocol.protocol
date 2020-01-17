@@ -1,0 +1,5 @@
+typestate DroppableObjectProtocol {
+  Start = {
+    void doSomething(): Start
+  }
+}
