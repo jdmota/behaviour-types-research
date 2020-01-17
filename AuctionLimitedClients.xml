@@ -1,0 +1,41 @@
+<contract name="Auction example"
+      invariant="hBid >= 0 AND (hBidder = -1 OR hBidder = 0 OR hBidder = 1)"
+>
+    <!--having hBid >= 0 on invariant produces a ltsa with violates_invariant="true"-->
+    <variable name="hBidder" type="INT" />
+    <variable name="hBid" type="INT" />
+    <variable name="pr0" type="INT" />
+    <variable name="pr1" type="INT" />
+    <variable name="ended" type="BOOLEAN" />
+    <variable name="won" type="BOOLEAN" />
+    <constructor name="Auction"
+            pre="TRUE"
+            post="hBidder' = -1 AND hBid' = 0 AND ended' &lt;=> FALSE AND won' &lt;=> FALSE AND pr0' = 0 AND pr1' = 0" >
+    </constructor>
+    <action name="bid0"
+            pre="bid > hBid AND bid > 0 AND 0 /= hBidder AND ended &lt;=> FALSE AND pr0 = 0"
+            post="(hBidder = -1 OR pr1' = hBid) AND hBid' = bid AND hBidder' = 0">
+      <parameter name="bid" type="INT" />
+    </action>
+    <action name="bid1"
+            pre="bid > hBid AND bid > 0 AND 1 /= hBidder AND ended &lt;=> FALSE AND pr1 = 0"
+            post="(hBidder = -1 OR pr0' = hBid) AND hBid' = bid AND hBidder' = 1">
+      <parameter name="bid" type="INT" />
+    </action>
+    <action name="withdraw0"
+            pre="0 /= hBidder AND pr0 > 0"
+            post="pr0' = 0">
+    </action>
+    <action name="withdraw1"
+            pre="1 /= hBidder AND pr1 > 0"
+            post="pr1' = 0">
+    </action>
+    <action name="win0"
+            pre="0 = hBidder AND 0 > hBid AND ended AND won &lt;=> FALSE"
+            post="won'">
+    </action>
+    <action name="win1"
+            pre="1 = hBidder AND 0 > hBid AND ended AND won &lt;=> FALSE"
+            post="won'">
+    </action>
+</contract>

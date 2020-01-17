@@ -1,0 +1,86 @@
+class Auction {
+
+  int hBidder;
+  int hBid;
+  int pr0;
+  int pr1;
+  int pr2;
+  boolean ended;
+  boolean won;
+  
+  //@ invariant true;
+  //@ initial hBidder == -1 && hBid == 0 && pr0 == 0 && pr1 == 0 && pr2 == 0 && !ended && !won;
+  void Auction() {
+    hBidder = -1;
+    hBid = 0;
+    pr0 = 0;
+    pr1 = 0;
+    pr2 = 0;
+    ended = false;
+    won = false;
+  }
+  
+  //@ requires hBidder != 0 && pr0 == 0 && !ended;
+  //@ ensures hBidder == 0;
+  void bid0(double v) {
+    hBid = v;
+    hBidder = 0;
+  }
+  
+  //@ requires hBidder != 1 && pr1 == 0 && !ended;
+  //@ ensures hBidder == 1;
+  void bid1(double v) {
+    hBid = v;
+    hBidder = 1;
+  }
+  
+  //@ requires hBidder != 2 && pr2 == 0 && !ended;
+  //@ ensures hBidder == 2;
+  void bid2(double v) {
+    hBid = v;
+    hBidder = 2;
+  }
+  
+  //@ requires hBidder != 0 && pr0 > 0;
+  //@ ensures pr0 == 0;
+  void withdraw0() {
+    pr0 = 0;
+  }
+  
+  //@ requires hBidder != 1 && pr1 > 0;
+  //@ ensures pr1 == 0;
+  void withdraw1() {
+    pr1 = 0;
+  }
+  
+  //@ requires hBidder != 2 && pr2 > 0;
+  //@ ensures pr2 == 0;
+  void withdraw2() {
+    pr2 = 0;
+  }
+  
+  //@ requires !won && hBidder == 0;
+  //@ ensures won;
+  void win0() {
+    won = true;
+  }
+  
+  //@ requires !won && hBidder == 1;
+  //@ ensures won;
+  void win1() {
+    won = true;
+  }
+  
+  //@ requires !won && hBidder == 2;
+  //@ ensures won;
+  void win2() {
+    won = true;
+  }
+  
+  //@ requires !ended;
+  //@ ensures ended;
+  void finish() {
+    ended = true;
+  }
+
+}

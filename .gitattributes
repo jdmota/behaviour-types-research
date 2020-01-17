@@ -2,4 +2,9 @@
 *.java eol=lf
 *.protocol eol=lf
 *.mungo eol=lf
+*.xml eol=lf
+*.ltsa eol=lf
+*.js eol=lf
+*.cmd eol=lf
+*.md eol=lf
 *.txt eol=lf

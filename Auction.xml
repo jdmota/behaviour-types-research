@@ -1,0 +1,31 @@
+<contract name="Auction example"
+      invariant="TRUE"
+>
+    <!--Warning! 'unknown' response from prover-->
+    <!--some uncertain transitions-->
+    <variable name="hBidder" type="INT" />
+    <variable name="hBid" type="REAL" />
+    <variable name="pr" type="ARRAY INT OF REAL" />
+    <variable name="ended" type="BOOLEAN" />
+    <variable name="won" type="BOOLEAN" />
+    <constructor name="Auction"
+            pre="TRUE"
+            post="hBidder' = -1 AND hBid' = 0 AND ended' &lt;=> FALSE AND won' &lt;=> FALSE AND FORALL (i:INT): pr'[i] = 0">
+    </constructor>
+    <action name="bid"
+            pre="bidder >= 0 AND bid > 0 AND bid > hBid AND bidder /= hBidder AND ended &lt;=> FALSE AND pr[bidder] = 0"
+            post="pr'[hBidder] = hBid AND hBid' = bid AND hBidder' = bidder">
+      <parameter name="bidder" type="INT" />
+      <parameter name="bid" type="REAL" />
+    </action>
+    <action name="withdraw"
+            pre="bidder >= 0 AND bidder /= hBidder AND pr[bidder] > 0"
+            post="pr'[bidder] = 0">
+      <parameter name="bidder" type="INT" />
+    </action>
+    <action name="win"
+            pre="bidder >= 0 AND bidder = hBidder AND ended AND won &lt;=> FALSE"
+            post="won'">
+      <parameter name="bidder" type="INT" />
+    </action>
+</contract>
