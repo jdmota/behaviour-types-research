@@ -1,3 +1,3 @@
 ## behaviour-types-research
 
-Auction example.
+Auction example 2.

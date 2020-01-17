@@ -1,30 +1,18 @@
 <?xml version="1.0" ?>
-<abstraction initial_state="Sinit" input_format="contract" name="Auction_example">
+<abstraction initial_state="Sinit" input_format="contract" name="Auction_2_example">
   <label name="bid"/>
-  <label name="withdraw"/>
   <label name="win"/>
+  <label name="finish"/>
   <label name="Auction"/>
   <state name="Sinit">
     <enabled_label name="Auction"/>
-    <transition destination="S7" label="Auction"/>
-    <transition destination="S5" label="Auction" uncertain="true"/>
+    <transition destination="S3" label="Auction"/>
   </state>
-  <state name="S7">
-    <enabled_label name="bid"/>
-    <enabled_label name="withdraw"/>
-    <enabled_label name="win"/>
-    <transition destination="S7" label="bid"/>
-    <transition destination="S5" label="bid" uncertain="true"/>
-    <transition destination="S7" label="withdraw"/>
-    <transition destination="S5" label="withdraw" uncertain="true"/>
-    <transition destination="S7" label="win"/>
-  </state>
-  <state name="S5" uncertain="true">
+  <state name="S3">
     <enabled_label name="bid"/>
     <enabled_label name="win"/>
-    <transition destination="S7" label="bid" uncertain="true"/>
-    <transition destination="S5" label="bid" uncertain="true"/>
-    <transition destination="S5" label="win" uncertain="true"/>
+    <transition destination="S3" label="bid"/>
+    <transition destination="S3" label="win"/>
   </state>
 </abstraction>
 
