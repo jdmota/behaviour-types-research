@@ -1,6 +1,3 @@
 ## behaviour-types-research
 
-Branches:
-
-- distributed
-- local
+See the branches. They include all the studied examples.
