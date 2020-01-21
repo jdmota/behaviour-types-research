@@ -1,8 +1,0 @@
-typestate CollectorProtocol<T> {
-  Start = {
-    void init(JavaIterator<T>): Initialized
-  }
-  Initialized = {
-    List<T> collect(): end
-  }
-}
