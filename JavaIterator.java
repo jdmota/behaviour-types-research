@@ -1,11 +1,14 @@
 import mungo.lib.Typestate;
-import mungo.lib.Boolean;
 
 @Typestate("JavaIteratorProtocol")
-public interface JavaIterator<T> {
+public class JavaIterator {
   
-	Boolean hasNext();
+  public Boolean hasNext() {
+    return Boolean.False;
+  }
   
-  T next();
+  public Object next() {
+    return null;
+  }
 
 }

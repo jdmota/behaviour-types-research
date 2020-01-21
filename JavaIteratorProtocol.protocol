@@ -1,8 +1,8 @@
-typestate JavaIteratorProtocol<T> {
+typestate JavaIteratorProtocol {
   HasNext = {
-    Boolean hasNext(): <TRUE: Next, FALSE: end>
+    Boolean hasNext(): <True: Next, False: end>
   }
   Next = {
-    T next(): HasNext
+    Object next(): HasNext
   }
 }
