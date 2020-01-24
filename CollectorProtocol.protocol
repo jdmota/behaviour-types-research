@@ -1,10 +1,10 @@
 import java.util.*;
 
-typestate CollectorProtocol {
+typestate CollectorProtocol<T> {
   Start = {
-    void init(Iterator<String>): Initialized
+    void init(Iterator<T>): Initialized
   }
   Initialized = {
-    List<String> collect(): Start
+    List<T> collect(): Start
   }
 }

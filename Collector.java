@@ -2,16 +2,16 @@ import java.util.*;
 import mungo.lib.Typestate;
 
 @Typestate("CollectorProtocol")
-public class Collector {
+public class Collector<T> {
   
-  private Iterator<String> it;
+  private Iterator<T> it;
   
-  public void init(Iterator<String> it) {
+  public void init(Iterator<T> it) {
     this.it = it;
   }
   
-  public List<String> collect() {
-    List<String> list = new LinkedList<>();
+  public List<T> collect() {
+    List<T> list = new LinkedList<>();
     while(it.hasNext()) {
       list.add(it.next());
     }
