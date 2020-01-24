@@ -1,11 +1,8 @@
 ## behaviour-types-research
 
-Mungo actually detects unreachable states. Good!
+Infinite example.
 
 ```
-StoreProtocol.protocol: 5-3: Warning
-  State not reachable: Receipt.
-
-StoreProtocol.protocol: 5-3: Warning
-  State not reachable: Receipt.
+Main.java: 0-0: Semantic Error
+  Object created at Main.java: 3. Typestate mismatch. Found: end, void handleRequest(). Expected: void handleRequest().
 ```

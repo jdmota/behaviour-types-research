@@ -1,8 +1,0 @@
-typestate StoreProtocol {
-  Start = {
-    BuyResult buy(String): <OK: end, KO: end>
-  }
-  Receipt = {
-    String emitReceipt(): end
-  }
-}

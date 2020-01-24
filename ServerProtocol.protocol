@@ -1,0 +1,5 @@
+typestate ServerProtocol {
+  Start = {
+    void handleRequest(): Start
+  }
+}

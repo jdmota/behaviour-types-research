@@ -1,8 +1,9 @@
-public class Main {
+public class Main2 {
 	public static void main(String[] args) {
 		Server server = new Server();
-    while(true) {
+    loop: do {
       server.handleRequest();
-    }
+      continue loop;
+    } while(true);
 	}
 }
