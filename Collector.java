@@ -1,28 +1,20 @@
 import java.util.*;
 import mungo.lib.Typestate;
-import mungo.lib.Boolean;
 
 @Typestate("CollectorProtocol")
-public class Collector<T> {
+public class Collector {
   
-  private JavaIterator<T> it;
+  private Iterator<String> it;
   
-	public void init(JavaIterator<T> it) {
+  public void init(Iterator<String> it) {
     this.it = it;
   }
   
-  public List<T> collect() {
-    List<T> list = new LinkedList<>();
-    loop: do {
-      switch(it.hasNext()) {
-        case True:
-          list.add(it.next());
-          break;
-        case False:
-          break loop;
-      }
-    } while(true);
+  public List<String> collect() {
+    List<String> list = new LinkedList<>();
+    while(it.hasNext()) {
+      list.add(it.next());
+    }
     return list;
   }
-
 }

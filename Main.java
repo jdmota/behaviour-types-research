@@ -1,16 +1,9 @@
-import mungo.lib.Boolean;
+import java.util.*;
 
 public class Main {
 	public static void main(String[] args) {
-		Collector<Object> collector = new Collector<>();
-		collector.init(new JavaIterator<Object>() {
-      public Boolean hasNext() {
-        return Boolean.False;
-      }
-      public Object next() {
-        return null;
-      }
-    });
-    collector.collect();
+		Collector collector = new Collector();
+    collector.init(Arrays.asList(args).iterator());
+    List<String> list = collector.collect();
 	}
 }
