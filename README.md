@@ -1,8 +1,11 @@
 ## behaviour-types-research
 
-Droppable object example.
+Mungo actually detects unreachable states. Good!
 
 ```
-Main.java: 4-7: Semantic Error
-  Object created at Main.java: 3. Typestate mismatch. Found: end. Expected: void doSomething().
+StoreProtocol.protocol: 5-3: Warning
+  State not reachable: Receipt.
+
+StoreProtocol.protocol: 5-3: Warning
+  State not reachable: Receipt.
 ```
