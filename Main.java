@@ -1,6 +1,6 @@
 public class Main {
 	public static void main(String[] args) {
-		MyComparator comparator = new MyComparator();
+		MyComparator<Integer> comparator = new MyComparator<Integer>();
     System.out.println(comparator.compare(10, 5));
 	}
 }

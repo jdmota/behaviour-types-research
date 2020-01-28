@@ -1,8 +1,8 @@
 import mungo.lib.Typestate;
 
 @Typestate("MyComparatorProtocol")
-public class MyComparator {
-  public int compare(int a, int b) {
-    return a < b ? -1 : a > b ? 1 : 0;
+public class MyComparator<T> {
+  public int compare(T a, T b) {
+    throw new RuntimeException("not implemented");
   }
 }

@@ -1,5 +1,5 @@
-typestate MyComparatorProtocol {
+typestate MyComparatorProtocol<T> {
   Start = {
-    int compare(int, int): Start
+    int compare(T, T): Start
   }
 }
