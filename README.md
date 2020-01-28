@@ -1,8 +1,8 @@
 ## behaviour-types-research
 
-Dropping collector example.
+Dropping comparator example.
 
 ```
 Main.java: 0-0: Semantic Error
-  Object created at Main.java: 5. Typestate mismatch. Found: end. Expected: void init(Iterator).
+  Object created at Main.java: 3. Typestate mismatch. Found: end. Expected: int compare(int, int).
 ```

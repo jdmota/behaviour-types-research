@@ -1,9 +1,6 @@
-import java.util.*;
-
 public class Main {
 	public static void main(String[] args) {
-		Collector collector = new Collector();
-    collector.init(Arrays.asList(args).iterator());
-    List<String> list = collector.collect();
+		MyComparator comparator = new MyComparator();
+    System.out.println(comparator.compare(10, 5));
 	}
 }
