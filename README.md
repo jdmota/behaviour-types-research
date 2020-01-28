@@ -1,6 +1,6 @@
 ## behaviour-types-research
 
-Auction example 4.
+Auction example with `init` method.
 
 ```
 Auction.java: 10-15: Semantic Error

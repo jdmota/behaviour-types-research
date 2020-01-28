@@ -6,7 +6,7 @@ public class Auction {
   private Client[] clients;
   private boolean ended;
 
-  public Auction(int maxClients) {
+  public void init(int maxClients) {
     hBidder = null;
     clients = new Client[maxClients];
     ended = false;

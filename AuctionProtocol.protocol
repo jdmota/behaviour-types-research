@@ -1,4 +1,7 @@
 typestate AuctionProtocol {
+  Start = {
+    void init(int): Unknown
+  }
   Unknown = {
     Boolean canBid(int, double): <True: Bidding, False: Unknown>,
     Client finish(): end
