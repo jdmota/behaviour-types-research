@@ -2,12 +2,12 @@ import mungo.lib.Typestate;
 
 @Typestate("AuctionProtocol")
 public class Auction {
-  private Client hBidder;
+  private int hBidder;
   private Client[] clients;
   private boolean ended;
 
   public Auction(int maxClients) {
-    hBidder = null;
+    hBidder = -1;
     clients = new Client[maxClients];
     ended = false;
     for (int i = 0; i < maxClients; i++)
@@ -15,18 +15,18 @@ public class Auction {
   }
   
   public Boolean canBid(int clientId, double val) {
-    return hBidder == null ||
-          (hBidder.getId() != clientId && val > hBidder.getBid()) ?
+    return hBidder == -1 ||
+          (hBidder != clientId && val > clients[hBidder].getBid()) ?
             Boolean.True :
             Boolean.False;
   }
 
   public void bid(int clientId, double val) {
     clients[clientId].bid(val);
-    hBidder = clients[clientId];
+    hBidder = clientId;
   }
 
-  public Client finish() {
+  public int finish() {
     ended = true;
     for (Client client : clients) {
       System.out.println(client.getId());
